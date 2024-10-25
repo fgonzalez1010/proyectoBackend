@@ -19,6 +19,7 @@ import com.proyecto.bd.entities.Sale;
 import com.proyecto.bd.entities.UserClient;
 import com.proyecto.bd.services.ClientService;
 
+//test
 @RestController
 @RequestMapping("/client")
 public class ClientController {
