@@ -50,14 +50,14 @@ public class ClientController {
 
     // Crear una nueva marca
     @PostMapping
-    public ResponseEntity<UserClient> createBrand(@RequestBody UserClient brand) {
+    public ResponseEntity<UserClient> createClient(@RequestBody UserClient brand) {
         UserClient createdBrand = clientService.createClient(brand);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdBrand);
     }
 
     // Actualizar una marca existente
     @PutMapping("/{id}")
-    public ResponseEntity<UserClient> updateBrand(@PathVariable Long id, @RequestBody UserClient updatedBrand) {
+    public ResponseEntity<UserClient> updateClient(@PathVariable Long id, @RequestBody UserClient updatedBrand) {
         try {
             UserClient brand = clientService.updateClient(id, updatedBrand);
             return ResponseEntity.ok(brand);
@@ -68,7 +68,7 @@ public class ClientController {
 
     // Eliminar una marca por ID
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteBrand(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteClient(@PathVariable Long id) {
         try {
             clientService.deleteClient(id);
             return ResponseEntity.status(HttpStatus.NO_CONTENT).build();

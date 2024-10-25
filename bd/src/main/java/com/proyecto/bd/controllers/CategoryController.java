@@ -28,13 +28,13 @@ public class CategoryController {
 
     // Obtener todas las marcas
     @GetMapping
-    public List<ProductCategory> getAllBrands() {
+    public List<ProductCategory> getAllCategory() {
         return categoryService.getAllCategory();
     }
 
     // Obtener una marca por ID
     @GetMapping("/{id}")
-    public ResponseEntity<ProductCategory> getBrandById(@PathVariable Long id) {
+    public ResponseEntity<ProductCategory> getCategoryById(@PathVariable Long id) {
         Optional<ProductCategory> brand = categoryService.getCategoryById(id);
         return brand.map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build());
@@ -42,14 +42,14 @@ public class CategoryController {
 
     // Crear una nueva marca
     @PostMapping
-    public ResponseEntity<ProductCategory> createBrand(@RequestBody ProductCategory brand) {
+    public ResponseEntity<ProductCategory> createCategory(@RequestBody ProductCategory brand) {
         ProductCategory createdBrand = categoryService.createCategory(brand);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdBrand);
     }
 
     // Actualizar una marca existente
     @PutMapping("/{id}")
-    public ResponseEntity<ProductCategory> updateBrand(@PathVariable Long id, @RequestBody ProductCategory updatedBrand) {
+    public ResponseEntity<ProductCategory> updateCategory(@PathVariable Long id, @RequestBody ProductCategory updatedBrand) {
         try {
             ProductCategory brand = categoryService.updateCategory(id, updatedBrand);
             return ResponseEntity.ok(brand);
@@ -60,7 +60,7 @@ public class CategoryController {
 
     // Eliminar una marca por ID
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteBrand(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteCategory(@PathVariable Long id) {
         try {
             categoryService.deleteCategory(id);
             return ResponseEntity.status(HttpStatus.NO_CONTENT).build();

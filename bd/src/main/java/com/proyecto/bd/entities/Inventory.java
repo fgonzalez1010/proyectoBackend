@@ -2,6 +2,8 @@ package com.proyecto.bd.entities;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,6 +37,7 @@ public class Inventory implements Serializable {
     @JoinColumn(name = "BRANCH_ID")
     private Branch branch;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "PRODUCT_ID")
     private Product product;
