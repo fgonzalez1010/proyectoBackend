@@ -30,7 +30,7 @@ public class LineService {
     }
 
 
-    public void deleteBrand(Long id) {
+    public void deleteLine(Long id) {
         if (lineRepository.existsById(id)) {
             lineRepository.deleteById(id);
         } else {

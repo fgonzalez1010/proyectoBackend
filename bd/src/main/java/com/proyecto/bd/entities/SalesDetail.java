@@ -41,9 +41,6 @@ public class SalesDetail implements Serializable {
     @Column(name = "UNIT_PRICE")
     private Integer unitPrice;
 
-    @OneToMany(mappedBy = "salesDetail")
-    private List<InventoryMovement> inventoryMovements;
-
     @ManyToOne
     @JoinColumn(name = "PRODUCT_ID")
     private Product product;

@@ -2,10 +2,11 @@ package com.proyecto.bd.services;
 
 import java.util.List;
 
-import com.proyecto.bd.entities.Product;
-import com.proyecto.bd.entities.UserClient;
-import com.proyecto.bd.repository.ProductRepository;
+import org.springframework.stereotype.Service;
 
+import com.proyecto.bd.entities.Product;
+import com.proyecto.bd.repository.ProductRepository;
+@Service
 public class ProductService {
 
     private final ProductRepository productRepository;

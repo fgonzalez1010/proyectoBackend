@@ -39,8 +39,6 @@ public class UserTable implements Serializable {
     @OneToMany(mappedBy = "userTable")
     private List<Sale> sales;
 
-    @OneToMany(mappedBy = "userTable")
-    private List<TransactionAudit> transactionAudits;
 
     @OneToMany(mappedBy = "userTable")
     private List<UserShift> userShifts;

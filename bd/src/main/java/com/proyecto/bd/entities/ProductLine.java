@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -24,7 +26,8 @@ public class ProductLine implements Serializable {
     private long lineId;
 
     private String name;
-
+    
+    @JsonIgnore
     @OneToMany(mappedBy = "productLine")
     private List<Product> products;
 

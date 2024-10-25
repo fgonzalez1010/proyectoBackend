@@ -37,8 +37,6 @@ public class Product implements Serializable {
     @OneToMany(mappedBy = "product")
     private List<Inventory> inventories;
 
-    @OneToMany(mappedBy = "product")
-    private List<InventoryMovement> inventoryMovements;
 
     @ManyToOne
     @JoinColumn(name = "CATEGORY_ID")

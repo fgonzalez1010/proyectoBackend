@@ -32,9 +32,6 @@ public class PurchaseDetail implements Serializable {
     @Column(name = "UNIT_PRICE")
     private BigDecimal unitPrice;
 
-    @OneToMany(mappedBy = "purchaseDetail")
-    private List<InventoryMovement> inventoryMovements;
-
     @ManyToOne
     @JoinColumn(name = "PRODUCT_ID")
     private Product product;
