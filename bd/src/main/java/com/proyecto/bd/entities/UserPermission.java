@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -25,6 +27,7 @@ public class UserPermission implements Serializable {
 
     private String name;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "userPermissions")
     private List<UserRole> userRoles;
 }
