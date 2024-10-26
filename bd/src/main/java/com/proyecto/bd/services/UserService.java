@@ -49,4 +49,9 @@ public class UserService {
             throw new RuntimeException("Brand not found with id: " + id);
         }
     }
+
+    public List<UserTable> findByEmailAndPassword(String email, String password){
+        return userRepository.findByEmailAndPassword(email, password);
+    }
+    
 }
