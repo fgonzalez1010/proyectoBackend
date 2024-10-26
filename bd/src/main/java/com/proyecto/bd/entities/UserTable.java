@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -33,9 +35,11 @@ public class UserTable implements Serializable {
     private String password;
     private String username;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "userTable")
     private List<Purchase> purchases;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "userTable")
     private List<Sale> sales;
 

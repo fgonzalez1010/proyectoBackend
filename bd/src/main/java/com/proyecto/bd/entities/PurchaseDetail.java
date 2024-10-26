@@ -1,13 +1,23 @@
 package com.proyecto.bd.entities;
 
-import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.NamedQuery;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
@@ -32,10 +42,12 @@ public class PurchaseDetail implements Serializable {
     @Column(name = "UNIT_PRICE")
     private BigDecimal unitPrice;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "PRODUCT_ID")
     private Product product;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "PURCHASE_ID")
     private Purchase purchase;

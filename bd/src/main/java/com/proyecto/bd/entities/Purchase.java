@@ -10,6 +10,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -38,10 +40,12 @@ public class Purchase implements Serializable {
     @JoinColumn(name = "PAYMENT_METHOD_ID")
     private PaymentMethod paymentMethod;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "SUPPLIER_ID")
     private Supplier supplier;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "USER_ID")
     private UserTable userTable;
