@@ -9,6 +9,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -34,6 +36,7 @@ public class Product implements Serializable {
     @Column(name = "URL_IMAGE")
     private String urlImage;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "product")
     private List<Inventory> inventories;
 
@@ -46,9 +49,11 @@ public class Product implements Serializable {
     @JoinColumn(name = "LINE_ID")
     private ProductLine productLine;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "product")
     private List<PurchaseDetail> purchaseDetails;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "product")
     private List<SalesDetail> salesDetails;
 }
