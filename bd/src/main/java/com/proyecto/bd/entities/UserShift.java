@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -19,10 +21,11 @@ public class UserShift implements Serializable {
     @EmbeddedId
     private UserShiftPK id;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "SHIFT_ID")
     private Shift shift;
-
+@JsonIgnore
     @ManyToOne
     @JoinColumn(name = "USER_ID")
     private UserTable userTable;

@@ -54,25 +54,27 @@ public class Sale implements Serializable {
 
     private String status;
     private Integer total;
+    
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "BRANCH_ID")
     private Branch branch;
-    @JsonIgnore
+    
     @ManyToOne
     @JoinColumn(name = "PAYMENT_METHOD_ID")
     private PaymentMethod paymentMethod;
-    @JsonIgnore
+    
     @ManyToOne
     @JoinColumn(name = "CLIENT_ID")
     private UserClient userClient;
-    @JsonIgnore
+
     @ManyToOne
     @JoinColumn(name = "USER_ID")
     private UserTable userTable;
-    @JsonIgnore
+
     @OneToMany(mappedBy = "sale")
     private List<SalesDetail> salesDetails;
+    
     @JsonIgnore
     @OneToMany(mappedBy = "sale")
     private List<SalePaymentDetail> salePaymentDetails;
