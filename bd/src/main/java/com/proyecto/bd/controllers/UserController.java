@@ -1,6 +1,8 @@
 package com.proyecto.bd.controllers;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,14 +74,26 @@ public class UserController {
         }
     }
     @PostMapping(path = "/login")
-public UserTable login(@RequestBody UserTable userName) {
+public Map<String, String> login(@RequestBody UserTable userName) {
     List<UserTable> userNames = userService.findByEmailAndPassword(
         userName.getEmail(), userName.getPassword());
-    UserTable usuarioRetorno = null;
+    
+    Map<String, String> response = new HashMap<>();
+    
     if (!userNames.isEmpty()) {
-        usuarioRetorno = userNames.get(0); // Accede a la lista correctamente
+        UserTable usuarioRetorno = userNames.get(0);
+        
+        String role = usuarioRetorno.getUserRole().getName(); // Asume que `getRoleName()` devuelve "USER" o "ADMIN"
+        response.put("status", "success");
+        response.put("role", role);
+        
+    } else {
+        response.put("status", "error");
+        response.put("message", "Usuario o contraseña inválidos");
     }
-    return usuarioRetorno;
+    
+    return response;
 }
+
 
 }
