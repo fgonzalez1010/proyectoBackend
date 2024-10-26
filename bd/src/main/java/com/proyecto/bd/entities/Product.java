@@ -1,15 +1,21 @@
 package com.proyecto.bd.entities;
 
-import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.NamedQuery;
+import jakarta.persistence.SequenceGenerator;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
@@ -36,10 +42,6 @@ public class Product implements Serializable {
     @Column(name = "URL_IMAGE")
     private String urlImage;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "product")
-    private List<Inventory> inventories;
-
 
     @ManyToOne
     @JoinColumn(name = "CATEGORY_ID")
@@ -49,11 +51,5 @@ public class Product implements Serializable {
     @JoinColumn(name = "LINE_ID")
     private ProductLine productLine;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "product")
-    private List<PurchaseDetail> purchaseDetails;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "product")
-    private List<SalesDetail> salesDetails;
 }
