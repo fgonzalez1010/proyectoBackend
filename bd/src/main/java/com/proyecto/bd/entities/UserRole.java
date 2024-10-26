@@ -8,7 +8,9 @@ import lombok.AllArgsConstructor;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Data
@@ -47,4 +49,11 @@ public class UserRole implements Serializable {
     @JsonIgnore
     @OneToMany(mappedBy = "userRole")
     private List<UserTable> userTables;
+
+     @JsonCreator
+    public static UserRole fromId(@JsonProperty("roleId") long roleId) {
+        UserRole userRole = new UserRole();
+        userRole.setRoleId(roleId);
+        return userRole;
+    }
 }

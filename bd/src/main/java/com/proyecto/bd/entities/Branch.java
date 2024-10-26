@@ -2,6 +2,9 @@ package com.proyecto.bd.entities;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -46,4 +49,11 @@ public class Branch implements Serializable {
     @OneToMany(mappedBy = "branch")
     private List<UserTable> userTables;
     */
+ @JsonCreator
+    public static Branch fromId(@JsonProperty("branchId") long branchId) {
+        Branch branch = new Branch();
+        branch.setBranchId(branchId);
+        return branch;
+    }
+    
 }
