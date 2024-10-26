@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -24,13 +26,15 @@ public class PaymentMethod implements Serializable {
     private long paymentMethodId;
 
     private String name;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "paymentMethod")
     private List<Purchase> purchases;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "paymentMethod")
     private List<Sale> sales;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "paymentMethod")
     private List<SalePaymentDetail> salePaymentDetails;
 }
