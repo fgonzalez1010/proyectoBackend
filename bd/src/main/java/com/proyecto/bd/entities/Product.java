@@ -13,6 +13,7 @@ import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,19 +22,20 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "PRODUCT")
 @NamedQuery(name = "Product.findAll", query = "SELECT p FROM Product p")
 public class Product implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @SequenceGenerator(name = "PRODUCT_PRODUCTID_GENERATOR",  sequenceName = "FGONZALEZPF.SEQ_PRODUCT_ID", allocationSize = 1)
+    @SequenceGenerator(name = "PRODUCT_PRODUCTID_GENERATOR",  sequenceName = "FMARROQUIN.SEQ_PRODUCT_ID", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PRODUCT_PRODUCTID_GENERATOR")
     @Column(name = "PRODUCT_ID")
     private long productId;
 
     private String active;
     private String name;
-    private BigDecimal price;
+    private Integer price;
     private String sku;
 
     @Lob

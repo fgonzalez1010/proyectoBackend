@@ -83,7 +83,7 @@ public Map<String, String> login(@RequestBody UserTable userName) {
     if (!userNames.isEmpty()) {
         UserTable usuarioRetorno = userNames.get(0);
         
-        String role = usuarioRetorno.getUserRole().getName(); // Asume que `getRoleName()` devuelve "USER" o "ADMIN"
+        String role = usuarioRetorno.getUserRole().getName();
         response.put("status", "success");
         response.put("role", role);
         
