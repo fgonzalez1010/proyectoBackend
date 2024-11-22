@@ -53,33 +53,26 @@ public class UserService {
     }
 
     public List<UserTable> findByEmailAndPassword(String email, String password) {
-        // Encriptar la contraseña usando el método encryptPassword
         String encryptedPassword = encryptPassword(password);
-
-        // Buscar el usuario con el email y la contraseña encriptada
         return userRepository.findByEmailAndPassword(email, encryptedPassword);
     }
 
     public static String encryptPassword(String password) {
         try {
-            // Crear un objeto MessageDigest para SHA-256
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
 
-            // Aplicar el hash sobre la contraseña
             byte[] hashBytes = digest.digest(password.getBytes());
 
-            // Convertir el hash a una cadena hexadecimal
             StringBuilder hexString = new StringBuilder();
             for (byte b : hashBytes) {
-                String hex = Integer.toHexString(0xff & b); // Convierte el byte a formato hexadecimal
+                String hex = Integer.toHexString(0xff & b); 
                 if (hex.length() == 1) {
-                    hexString.append('0'); // Asegura que todos los bytes tengan dos caracteres hexadecimales
+                    hexString.append('0');
                 }
                 hexString.append(hex);
             }
 
-            // Devolver el hash en formato hexadecimal
-            return hexString.toString().toUpperCase(); // Asegurarse de que esté en mayúsculas
+            return hexString.toString().toUpperCase();
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException("No existe el algoritmo de encriptación SHA-256", e);
         }

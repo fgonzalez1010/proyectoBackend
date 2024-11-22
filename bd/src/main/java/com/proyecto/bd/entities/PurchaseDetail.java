@@ -29,7 +29,7 @@ public class PurchaseDetail implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @SequenceGenerator(name = "PURCHASE_DETAIL_PURCHASEDETAILID_GENERATOR",  sequenceName = "FGONZALEZPF.SEQ_PURCHASE_DETAIL_ID", allocationSize = 1)
+    @SequenceGenerator(name = "PURCHASE_DETAIL_PURCHASEDETAILID_GENERATOR",  sequenceName = "FMARROQUIN.SEQ_PURCHASE_DETAIL_ID", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PURCHASE_DETAIL_PURCHASEDETAILID_GENERATOR")
     @Column(name = "PURCHASE_DETAIL_ID")
     private long purchaseDetailId;

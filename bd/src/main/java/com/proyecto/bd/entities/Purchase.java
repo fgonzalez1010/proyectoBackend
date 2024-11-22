@@ -21,7 +21,7 @@ public class Purchase implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @SequenceGenerator(name = "PURCHASE_PURCHASEID_GENERATOR",  sequenceName = "FGONZALEZPF.SEQ_PURCHASE_ID", allocationSize = 1)
+    @SequenceGenerator(name = "PURCHASE_PURCHASEID_GENERATOR",  sequenceName = "FMARROQUIN.SEQ_PURCHASE_ID", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PURCHASE_PURCHASEID_GENERATOR")
     @Column(name = "PURCHASE_ID")
     private long purchaseId;

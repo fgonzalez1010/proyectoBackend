@@ -26,7 +26,7 @@ public class Branch implements Serializable {
 
     @Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BRANCH_BRANCHID_GENERATOR")
-    @SequenceGenerator(name = "BRANCH_BRANCHID_GENERATOR", sequenceName = "FGONZALEZPF.SEQ_BRANCH_ID", allocationSize = 1)
+    @SequenceGenerator(name = "BRANCH_BRANCHID_GENERATOR", sequenceName = "FMARROQUIN.SEQ_BRANCH_ID", allocationSize = 1)
     @Column(name = "BRANCH_ID")
     private long branchId;
 

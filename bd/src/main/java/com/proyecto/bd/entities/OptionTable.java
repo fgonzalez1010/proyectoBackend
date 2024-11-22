@@ -19,7 +19,7 @@ public class OptionTable implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @SequenceGenerator(name = "OPTION_TABLE_OPTIONID_GENERATOR", sequenceName = "FGONZALEZPF.SEQ_OPTION_ID", allocationSize = 1 )
+    @SequenceGenerator(name = "OPTION_TABLE_OPTIONID_GENERATOR", sequenceName = "FMARROQUIN.SEQ_OPTION_ID", allocationSize = 1 )
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "OPTION_TABLE_OPTIONID_GENERATOR")
     @Column(name = "OPTION_ID")
     private long optionId;

@@ -20,7 +20,7 @@ public class PaymentMethod implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @SequenceGenerator(name = "PAYMENT_METHOD_PAYMENTMETHODID_GENERATOR", sequenceName = "FGONZALEZPF.SEQ_PAYMENT_METHOD_ID", allocationSize = 1)
+    @SequenceGenerator(name = "PAYMENT_METHOD_PAYMENTMETHODID_GENERATOR", sequenceName = "FMARROQUIN.SEQ_PAYMENT_METHOD_ID", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PAYMENT_METHOD_PAYMENTMETHODID_GENERATOR")
     @Column(name = "PAYMENT_METHOD_ID")
     private long paymentMethodId;

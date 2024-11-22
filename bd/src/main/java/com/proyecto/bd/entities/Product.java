@@ -2,6 +2,7 @@ package com.proyecto.bd.entities;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,6 +13,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.NamedQuery;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -52,6 +54,5 @@ public class Product implements Serializable {
     @ManyToOne
     @JoinColumn(name = "LINE_ID")
     private ProductLine productLine;
-
 
 }

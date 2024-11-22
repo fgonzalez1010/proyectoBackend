@@ -15,7 +15,7 @@ public class Brand implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BRAND_BRANDID_GENERATOR")
-    @SequenceGenerator(name = "BRAND_BRANDID_GENERATOR", sequenceName = "FGONZALEZPF.SEQ_BRAND_ID", allocationSize = 1)
+    @SequenceGenerator(name = "BRAND_BRANDID_GENERATOR", sequenceName = "FMARROQUIN.SEQ_BRAND_ID", allocationSize = 1)
     @Column(name = "BRAND_ID")
     private long brandId;
 

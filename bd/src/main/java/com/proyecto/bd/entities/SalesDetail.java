@@ -28,7 +28,7 @@ public class SalesDetail implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @SequenceGenerator(name = "SALES_DETAIL_SALEDETAILID_GENERATOR", sequenceName = "FGONZALEZPF.SEQ_SALE_DETAIL_ID", allocationSize = 1)
+    @SequenceGenerator(name = "SALES_DETAIL_SALEDETAILID_GENERATOR", sequenceName = "FMARROQUIN.SEQ_SALE_DETAIL_ID", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SALES_DETAIL_SALEDETAILID_GENERATOR")
     @Column(name = "SALE_DETAIL_ID")
     private long saleDetailId;

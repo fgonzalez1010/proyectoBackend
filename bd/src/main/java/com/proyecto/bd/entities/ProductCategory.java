@@ -24,7 +24,7 @@ public class ProductCategory implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @SequenceGenerator(name = "PRODUCT_CATEGORY_CATEGORYID_GENERATOR", sequenceName = "FGONZALEZPF.SEQ_CATEGORY_ID", allocationSize = 1)
+    @SequenceGenerator(name = "PRODUCT_CATEGORY_CATEGORYID_GENERATOR", sequenceName = "FMARROQUIN.SEQ_CATEGORY_ID", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PRODUCT_CATEGORY_CATEGORYID_GENERATOR")
     @Column(name = "CATEGORY_ID")
     private long categoryId;

@@ -20,7 +20,7 @@ public class UserPermission implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @SequenceGenerator(name = "USER_PERMISSION_PERMISSIONID_GENERATOR",sequenceName = "FGONZALEZPF.SEQ_PERMISSION_ID", allocationSize = 1)
+    @SequenceGenerator(name = "USER_PERMISSION_PERMISSIONID_GENERATOR",sequenceName = "FMARROQUIN.SEQ_PERMISSION_ID", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "USER_PERMISSION_PERMISSIONID_GENERATOR")
     @Column(name = "PERMISSION_ID")
     private long permissionId;

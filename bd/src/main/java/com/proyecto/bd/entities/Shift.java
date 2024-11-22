@@ -17,7 +17,7 @@ public class Shift implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @SequenceGenerator(name = "SHIFT_SHIFTID_GENERATOR",sequenceName = "FGONZALEZPF.SEQ_SHIFT_ID", allocationSize = 1)
+    @SequenceGenerator(name = "SHIFT_SHIFTID_GENERATOR",sequenceName = "FMARROQUIN.SEQ_SHIFT_ID", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SHIFT_SHIFTID_GENERATOR")
     @Column(name = "SHIFT_ID")
     private long shiftId;

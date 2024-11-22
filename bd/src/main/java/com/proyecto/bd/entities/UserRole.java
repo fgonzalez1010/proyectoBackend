@@ -22,7 +22,7 @@ public class UserRole implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @SequenceGenerator(name = "USER_ROLE_ROLEID_GENERATOR", sequenceName = "FGONZALEZPF.SEQ_ROLE_ID", allocationSize = 1)
+    @SequenceGenerator(name = "USER_ROLE_ROLEID_GENERATOR", sequenceName = "FMARROQUIN.SEQ_ROLE_ID", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "USER_ROLE_ROLEID_GENERATOR")
     @Column(name = "ROLE_ID")
     private long roleId;

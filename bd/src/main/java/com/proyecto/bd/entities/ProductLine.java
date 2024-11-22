@@ -20,7 +20,7 @@ public class ProductLine implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @SequenceGenerator(name = "PRODUCT_LINE_LINEID_GENERATOR", sequenceName = "FGONZALEZPF.SEQ_LINE_ID", allocationSize = 1)
+    @SequenceGenerator(name = "PRODUCT_LINE_LINEID_GENERATOR", sequenceName = "FMARROQUIN.SEQ_LINE_ID", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PRODUCT_LINE_LINEID_GENERATOR")
     @Column(name = "LINE_ID")
     private long lineId;

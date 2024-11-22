@@ -31,7 +31,7 @@ public class Sale implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @SequenceGenerator(name = "SALE_SALEID_GENERATOR", sequenceName = "FGONZALEZPF.SEQ_SALE_ID", allocationSize = 1)
+    @SequenceGenerator(name = "SALE_SALEID_GENERATOR", sequenceName = "FMARROQUIN.SEQ_SALE_ID", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SALE_SALEID_GENERATOR")
     @Column(name = "SALE_ID")
     private long saleId;

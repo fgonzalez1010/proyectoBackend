@@ -17,7 +17,7 @@ public class Supplier implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @SequenceGenerator(name = "SUPPLIER_SUPPLIERID_GENERATOR", sequenceName = "FGONZALEZPF.SEQ_SUPPLIER_ID", allocationSize = 1)
+    @SequenceGenerator(name = "SUPPLIER_SUPPLIERID_GENERATOR", sequenceName = "FMARROQUIN.SEQ_SUPPLIER_ID", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SUPPLIER_SUPPLIERID_GENERATOR")
     @Column(name = "SUPPLIER_ID")
     private long supplierId;
